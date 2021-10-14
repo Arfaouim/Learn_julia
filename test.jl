@@ -35,4 +35,34 @@ end
 monte_carlo_integration(f, 0, 1, 1000)
 
 
+using Pkg
+# to list all installed packages
+Pkg.installed()
 
+Pkg.add("Calculus")
+
+# to use a package:
+using Calculus
+
+derivative(x -> sin(x), 1.0)
+
+Pkg.add("Plots");
+Pkg.add("GR");
+
+using Plots
+
+plot([cumsum(rand(500) .- 0.5), cumsum(rand(500) .- 0.5)])
+
+x = 1:10
+y = rand(10)
+plot(x, y)
+
+plot(f, -3, 3)
+
+plot(cos, -2*pi, 2*pi, title= "Cos(x)", xlabel="x", ylabel="Cos(x)")
+
+Plots.PlotlyBackend()
+
+# Same Plot
+plot(f, -3, 3)
+plot!(sin, -pi,pi)
